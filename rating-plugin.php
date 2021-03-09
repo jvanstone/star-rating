@@ -213,7 +213,7 @@ function rate_us_rating_scripts() {
             'rate_it' => __( 'Rate It', 'rate_us' ),
             'choose_rate' => __( 'Choose a Rate', 'rate_us' ),
             'submitting' => __( 'Submitting...', 'rate_us' ),
-            'thank_you' => __( 'Thank you for rating us. You can also <a href="/contact-us/>send us a comment!</a> ', 'rate_us' ),
+            'thank_you' => __( 'Thank you for rating us.', 'rate_us' ),
             'submit' => __( 'Submit', 'rate_us' ),
         )
     ));
