@@ -213,7 +213,7 @@ function rate_us_rating_scripts() {
             'rate_it' => __( 'Rate It', 'rate_us' ),
             'choose_rate' => __( 'Choose a Rate', 'rate_us' ),
             'submitting' => __( 'Submitting...', 'rate_us' ),
-            'thank_you' => __( 'Thank You for Your Rating!', 'rate_us' ),
+            'thank_you' => __( 'Thank you for rating us. You can also <a href="/contact-us/>send us a comment!</a> ', 'rate_us' ),
             'submit' => __( 'Submit', 'rate_us' ),
         )
     ));
@@ -251,7 +251,7 @@ function rate_us_submit_rating() {
                 
                 if( $success ) {
 
-                    $result['message'] = __( 'Thank you for rating!', 'rate_us' );
+                    $result['message'] = __( 'Thank you for rating us. You can also <a href="/contact-us/>send us a comment!</a> ', 'rate_us' );
                     $ratingCookie[] = $rate_id;
                     $expire = time() + 30*DAY_IN_SECONDS;
                     setcookie( 'rate_us_rating', base64_encode(serialize( $ratingCookie )), $expire, COOKIEPATH, COOKIE_DOMAIN );
@@ -286,14 +286,14 @@ function rate_us_rating_render() {
     $ratingValues = 5;
     ?>
    
-    <div id="contentRating" class="rate_us-rating collapse">
+    <div id="contentRating" class="rate_us-rating ">
         <button type="button" id="toggleRating" class="active">
             <span class="text">
-                <?php _e( 'How did we do?', 'rate_us' ); ?>
+                <?php _e( 'Rate this Issue!', 'rate_us' ); ?>
             </span>
             <span class="arrow"></span>
         </button> 
-        <div id="entryRating" class="rate_us-rating-content active">
+        <div id="entryRating" class="rate_us-rating-content">
             <div class="errors" id="ratingErrors"></div>
             <ul>
                 <?php for( $i = 1; $i <= $ratingValues; $i++ ) {

@@ -9,7 +9,7 @@
             var $text = $(this).children('.text');
 
             $("#entryRating").toggleClass('active');
-
+            
             if( $("#entryRating").hasClass('active') ) {
                 $text.html( rate_us_object.text.close_rating );
             } else {
