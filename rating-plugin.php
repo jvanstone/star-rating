@@ -286,7 +286,7 @@ function rate_us_rating_render() {
     $ratingValues = 5;
     ?>
    
-    <div id="contentRating" class="rate_us-rating">
+    <div id="contentRating" class="rate_us-rating collapse">
         <button type="button" id="toggleRating" class="active">
             <span class="text">
                 <?php _e( 'How did we do?', 'rate_us' ); ?>
