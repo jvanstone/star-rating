@@ -6,7 +6,7 @@
  */
 function rate_us_rating_scripts() { 
     wp_enqueue_style( 'rating', plugin_dir_url( __FILE__ ) . '../rating.css', array(), '', 'screen' );
-    wp_register_script( 'rating-js', plugin_dir_url( __FILE__ ) . 'assets/js/rating.js', array('jquery'), '', true );
+    wp_register_script( 'rating-js', plugin_dir_url( __FILE__ ) . '../assets/js/rating.js', array('jquery'), '', true );
     wp_localize_script( 'rating-js', 'rate_us_object', array(
         'ajax_url' => admin_url( 'admin-ajax.php' ),
         'nonce'    => wp_create_nonce( 'rate_us_rating' ),
