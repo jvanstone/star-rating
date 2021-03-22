@@ -12,7 +12,7 @@
 // Local project URL of your already running WordPress site.
 // > Could be something like "wpgulp.local" or "localhost"
 // > depending upon your local WordPress setup.
-const projectURL = 'wpgulp.local';
+const projectURL = 'localhost/sandbox-wp/canada-info';
 
 // Theme/Plugin URL. Leave it like it is; since our gulpfile.js lives in the root folder.
 const productURL = './';
@@ -21,7 +21,7 @@ const injectChanges = true;
 
 // >>>>> Style options.
 // Path to main .scss file.
-const styleSrate_us = './assets/sass/rating.scss';
+const styleSRC = './assets/sass/rating.scss';
 
 // Path to place the compiled CSS file. Default set to root folder.
 const styleDestination = './';
@@ -34,7 +34,7 @@ const precision = 10;
 // JS Vendor options.
 
 // Path to JS vendor folder.
-const jsVendorSrate_us = './assets/js/vendor/*.js';
+const jsVendorSRC = './assets/js/vendor/*.js';
 
 // Path to place the compiled JS vendors file.
 const jsVendorDestination = './assets/js/';
@@ -45,7 +45,7 @@ const jsVendorFile = 'vendor';
 // JS Custom options.
 
 // Path to JS custom scripts folder.
-const jsCustomSrate_us = './assets/js/custom/*.js';
+const jsCustomSRC = './assets/js/custom/*.js';
 
 // Path to place the compiled JS custom scripts file.
 const jsCustomDestination = './assets/js/';
@@ -57,10 +57,10 @@ const jsCustomFile = 'custom';
 
 // Sourate_use folder of images which should be optimized and watched.
 // > You can also specify types e.g. raw/**.{png,jpg,gif} in the glob.
-const imgSrate_us = './assets/img/raw/**/*';
+const imgSRC = './assets/img/raw/**/*';
 
 // Destination folder of optimized images.
-// > Must be different from the imagesSrate_us folder.
+// > Must be different from the imagesSRC folder.
 const imgDST = './assets/img/';
 
 // >>>>> Watch files paths.
@@ -102,10 +102,10 @@ const zipIgnoreGlob = [
 	'!./assets/css',
 	'!./assets/img/raw/**/*',
 	'!./assets/img/raw',
-	`!${imgSrate_us}`,
-	`!${styleSrate_us}`,
-	`!${jsCustomSrate_us}`,
-	`!${jsVendorSrate_us}`
+	`!${imgSRC}`,
+	`!${styleSRC}`,
+	`!${jsCustomSRC}`,
+	`!${jsVendorSRC}`,
 ];
 
 // >>>>> Translation options.
@@ -140,18 +140,18 @@ module.exports = {
 	productURL,
 	browserAutoOpen,
 	injectChanges,
-	styleSrate_us,
+	styleSRC,
 	styleDestination,
 	outputStyle,
 	errLogToConsole,
 	precision,
-	jsVendorSrate_us,
+	jsVendorSRC,
 	jsVendorDestination,
 	jsVendorFile,
-	jsCustomSrate_us,
+	jsCustomSRC,
 	jsCustomDestination,
 	jsCustomFile,
-	imgSrate_us,
+	imgSRC,
 	imgDST,
 	watchStyles,
 	watchJsVendor,

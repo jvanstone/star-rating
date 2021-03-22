@@ -60,13 +60,14 @@
         padding:10px;
         position: relative;
         color: black;
-    }
+	}
 
     ul li label {
         cursor: pointer;
         padding: 5px 10px;
         border-radius:3px;
-        color: black;
+		border: solid 1px #000;
+        color: black !important;
     }
     
     ul li input {
@@ -75,7 +76,7 @@
     }
 
     ul li input:checked ~ label {
-    background-color: #fb8b33;
+    	background-color: #fb8b33;
     }
 }
 
@@ -85,13 +86,11 @@
 }
 
 #submitRating {
-    background: white;
+    background: rgb(202, 198, 198);
     color: #333;
     font-size: 12px;
-    text-transform: upperate_usase;
+    text-transform: uppercase;
     border-radius:3px;
-    border:none;
-    box-shadow: none;
     padding: 5px 10px;
 }
 
