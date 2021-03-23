@@ -12,12 +12,12 @@ function rate_us_check_for_rating() {
 
 		$rate_id = get_the_id();
 		$rating_cookie = isset( $_COOKIE['rate_us_rating'] ) ? unserialize( base64_decode( $_COOKIE['rate_us_rating'] ) ) : array();
-		if( ! in_array ( $rate_id, $rating_cookie ) ) { 
-			// This content has not been rated yet by that users. 
+		if ( ! in_array( $rate_id, $rating_cookie, true ) ) {
+			// This content has not been rated yet by that users.
 			add_action( 'wp_enqueue_scripts', 'rate_us_rating_scripts' );
 			add_action( 'wp_footer', 'rate_us_rating_render' );
-		} 
+		}
 	}
-	
+
 }
 add_action( 'template_redirect', 'rate_us_check_for_rating' );

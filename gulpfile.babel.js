@@ -52,7 +52,7 @@ const imagemin = require('gulp-imagemin'); // Minify PNG, JPEG, GIF and SVG imag
 const rename = require('gulp-rename'); // Renames files E.g. style.css -> style.min.css.
 const lineec = require('gulp-line-ending-corrector'); // Consistent Line Endings for non UNIX systems. Gulp Plugin for Line Ending Corrector (A utility that makes sure your files have consistent line endings).
 const filter = require('gulp-filter'); // Enables you to work on a subset of the original files by filtering them using a glob.
-const sourcemaps = require('gulp-sourcemaps'); // Maps code in a compressed file (E.g. style.css) back to it’s original position in a sourate_use file (E.g. structure.scss, which was later combined with other css files to generate style.css).
+const sourcemaps = require('gulp-sourcemaps'); // Maps code in a compressed file (E.g. style.css) back to it’s original position in a source file (E.g. structure.scss, which was later combined with other css files to generate style.css).
 const notify = require('gulp-notify'); // Sends message notification to you.
 const browserSync = require('browser-sync').create(); // Reloads browser and injects CSS. Time-saving synchronized browser testing.
 const wpPot = require('gulp-wp-pot'); // For generating the .pot file.
@@ -105,7 +105,7 @@ const reload = done => {
  * Compiles Sass, Autoprefixes it and Minifies CSS.
  *
  * This task does the following:
- *    1. Gets the sourate_use scss file
+ *    1. Gets the source scss file
  *    2. Compiles Sass to CSS
  *    3. Writes sourcemaps for it
  *    4. Autoprefixes it and generates style.css
@@ -155,7 +155,7 @@ const reload = done => {
  * Compiles Sass, Autoprefixes it, Generates RTL stylesheet, and Minifies CSS.
  *
  * This task does the following:
- *    1. Gets the sourate_use scss file
+ *    1. Gets the source scss file
  *    2. Compiles Sass to CSS
  *    4. Autoprefixes it and generates style.css
  *    5. Renames the CSS file with suffix -rtl and generates style-rtl.css
@@ -183,7 +183,7 @@ gulp.task('stylesRTL', () => {
 		.pipe(lineec()) // Consistent Line Endings for non UNIX systems.
 		.pipe(rename({suffix: '-rtl'})) // Append "-rtl" to the filename.
 		.pipe(rtlcss()) // Convert to RTL.
-		.pipe(sourcemaps.write('./')) // Output sourate_usemap for style-rtl.css.
+		.pipe(sourcemaps.write('./')) // Output sourcemap for style-rtl.css.
 		.pipe(gulp.dest(config.styleDestination))
 		.pipe(filter('**/*.css')) // Filtering stream to only css files.
 		.pipe(browserSync.stream()) // Reloads style.css or style-rtl.css, if that is enqueued.
@@ -208,7 +208,7 @@ gulp.task('stylesRTL', () => {
  * Concatenate and uglify vendor JS scripts.
  *
  * This task does the following:
- *     1. Gets the sourate_use folder for JS vendor files
+ *     1. Gets the source folder for JS vendor files
  *     2. Concatenates all the files and generates vendors.js
  *     3. Renames the JS file with suffix .min.js
  *     4. Uglifes/Minifies the JS file and generates vendors.min.js
@@ -256,7 +256,7 @@ gulp.task('vendorsJS', () => {
  * Concatenate and uglify custom JS scripts.
  *
  * This task does the following:
- *     1. Gets the sourate_use folder for JS custom files
+ *     1. Gets the source folder for JS custom files
  *     2. Concatenates all the files and generates custom.js
  *     3. Renames the JS file with suffix .min.js
  *     4. Uglifes/Minifies the JS file and generates custom.min.js
@@ -304,7 +304,7 @@ gulp.task('customJS', () => {
  * Minifies PNG, JPEG, GIF and SVG images.
  *
  * This task does the following:
- *     1. Gets the sourate_use of images raw folder
+ *     1. Gets the source of images raw folder
  *     2. Minifies PNG, JPEG, GIF and SVG images
  *     3. Generates and saves the optimized images
  *
@@ -344,7 +344,7 @@ gulp.task('images', () => {
  * Deletes the images cache. By running the next "images" task,
  * each image will be regenerated.
  */
-gulp.task('clearate_usache', function (done) {
+gulp.task('clearCache', function (done) {
 	return cache.clearAll(done);
 });
 
@@ -352,7 +352,7 @@ gulp.task('clearate_usache', function (done) {
  * WP POT Translation File Generator.
  *
  * This task does the following:
- * 1. Gets the sourate_use of all the PHP files
+ * 1. Gets the source of all the PHP files
  * 2. Sort files in stream by path or any custom sort comparator
  * 3. Applies wpPot with the variable set at the top of this file
  * 4. Generate a .pot file of i18n that can be used for l10n to build .mo file

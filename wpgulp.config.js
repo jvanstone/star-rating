@@ -91,9 +91,9 @@ const zipIgnoreGlob = [
 	'!./.svn',
 	'!./gulpfile.babel.js',
 	'!./wpgulp.config.js',
-	'!./.eslintrate_us.js',
+	'!./.eslintrc.js',
 	'!./.eslintignore',
-	'!./.editorate_usonfig',
+	'!./.editorconfig',
 	'!./phpcs.xml.dist',
 	'!./vscode',
 	'!./package.json',
@@ -110,7 +110,7 @@ const zipIgnoreGlob = [
 
 // >>>>> Translation options.
 // Your text domain here.
-const textDomain = 'WPGULP';
+const textDomain = 'star-rating';
 
 // Name of the translation file.
 const translationFile = 'WPGULP.pot';
@@ -119,16 +119,16 @@ const translationFile = 'WPGULP.pot';
 const translationDestination = './languages';
 
 // Package name.
-const packageName = 'WPGULP';
+const packageName = 'star-rating';
 
 // Where can users report bugs.
-const bugReport = 'https://AhmadAwais.com/contact/';
+const bugReport = '';
 
 // Last translator Email ID.
 const lastTranslator = 'Ahmad Awais <your_email@email.com>';
 
 // Team's Email ID.
-const team = 'AhmadAwais <your_email@email.com>';
+const team = 'Jason Vanstone <jason@vanstoneonline.com>';
 
 // Browsers you care about for auto-prefixing. Browserlist https://github.com/ai/browserslist
 // The following list is set as per WordPress requirements. Though; Feel free to change.
