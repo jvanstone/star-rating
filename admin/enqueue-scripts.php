@@ -25,8 +25,11 @@ function rate_us_rating_scripts() {
 add_action( 'wp_ajax_submit_rating', 'rate_us_submit_rating' );
 add_action( 'wp_ajax_nopriv_submit_rating', 'rate_us_submit_rating' );
 
-//Enqueue the Dashicons script
+/**
+ * Enqueue the Dashicons script
+ *
+ * */
 add_action( 'wp_enqueue_scripts', 'load_dashicons_front_end' );
 function load_dashicons_front_end() {
-wp_enqueue_style( 'dashicons' );
+	wp_enqueue_style( 'dashicons' );
 }
