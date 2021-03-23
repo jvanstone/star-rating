@@ -12,12 +12,12 @@ function rate_us_rating_scripts() {
 		'ajax_url' => admin_url( 'admin-ajax.php' ),
 		'nonce'    => wp_create_nonce( 'rate_us_rating' ),
 		'text'     => array(
-			'close_rating' => __( ' Close Rating', 'rate-us' ),
-			'rate_it'      => __( ' Rate this Issue ', 'rate-us' ),
-			'choose_rate'  => __( ' Choose a Rate ', 'rate-us' ),
-			'submitting'   => __( ' Submitting... ', 'rate-us' ),
-			'thank_you'    => __( ' Thank you for rating us. ', 'rate-us' ),
-			'submit'       => __( ' Submit ', 'rate-us' ),
+			'close_rating' => __( 'Close Rating', 'rate-us' ),
+			'rate_it'      => __( 'Rate this Issue', 'rate-us' ),
+			'choose_rate'  => __( 'Choose a Rate', 'rate-us' ),
+			'submitting'   => __( 'Submitting...', 'rate-us' ),
+			'thank_you'    => __( 'Thank you for rating us.', 'rate-us' ),
+			'submit'       => __( 'Submit', 'rate-us' ),
 		),
 	));
 	wp_enqueue_script( 'rating-js' );

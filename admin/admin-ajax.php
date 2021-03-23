@@ -32,7 +32,7 @@ function rate_us_submit_rating() {
 
 					$result['message'] = __( 'Thank you for your rating!', 'rate-us' );
 					$rating_cookie[] = $rate_id;
-					$expire = time() + 30 * DAY_IN_SECONDS;
+					$expire = time() + 30*DAY_IN_SECONDS;
 					setcookie( 'rate_us_rating', base64_encode( serialize( $rating_cookie ) ), $expire, COOKIEPATH, COOKIE_DOMAIN );
 					$_COOKIE['rate_us_rating'] = base64_encode( serialize( $rating_cookie ) );
 				}

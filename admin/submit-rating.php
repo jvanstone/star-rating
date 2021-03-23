@@ -14,7 +14,7 @@ function rate_us_submit_rating() {
 		$ratingCookie = array();
 	}
 
-	$ratingCookie = array();
+
 	if( $rate_id > 0 ) {
 
 		if( ! in_array( $rate_id, $ratingCookie ) ) {
