@@ -39,7 +39,6 @@ function rate_us_rating_render() {
 		</button>
 		<div id="entryRating" class="rate-us-rating-content">
 			<div class="errors" id="ratingErrors"></div>
-			<div class="note">Please note you can only vote once!</div>
 			<ul>
 				<?php for( $i = 1; $i <= $rating_values; $i++ ) {
 					echo '<li>';
